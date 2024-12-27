@@ -1,11 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
+  // darkMode: "class",
   content: [
     "./app/**/*.{js,jsx,ts,tsx}",
     "./components/*.{js,jsx,ts,tsx,mdx}",
-    "../../packages/components/**/*.{js,jsx,ts,tsx}",
-    "../../packages/screens/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@yuvrajhere/rn-ui-lib/ui/**/*.{js,jsx,ts,tsx}"
   ],
   safelist: [
     "gap-x-2",

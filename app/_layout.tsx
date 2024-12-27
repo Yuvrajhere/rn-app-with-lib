@@ -8,7 +8,7 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-// import { GluestackUIProvider } from "@/ui-lib/ui/gluestack-ui-provider";
+import { GluestackUIProvider } from "@yuvrajhere/rn-ui-lib/ui/gluestack-ui-provider";
 import "../global.css";
 
 export {
@@ -49,22 +49,21 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = "dark";
+  const colorScheme: "light" | "dark" = "light";
 
   return (
-    // <GluestackUIProvider mode={(colorScheme ?? "light") as "light" | "dark"}>
-    //   <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-    //     <Stack screenOptions={{ headerShown: false }}>
-    //       <Stack.Screen name="signin" />
-    //       <Stack.Screen name="signup" />
-    //       <Stack.Screen name="forgot-password" />
-    //       <Stack.Screen name="create-password" />
-    //       <Stack.Screen name="news-feed" />
-    //       <Stack.Screen name="dashboard" />
-    //       <Stack.Screen name="profile" />
-    //     </Stack>
-    //   </ThemeProvider>
-    // </GluestackUIProvider>
-    <Stack />
+    <GluestackUIProvider mode={(colorScheme ?? "light") as "light" | "dark"}>
+      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="signin" />
+          <Stack.Screen name="signup" />
+          <Stack.Screen name="forgot-password" />
+          <Stack.Screen name="create-password" />
+          <Stack.Screen name="news-feed" />
+          <Stack.Screen name="dashboard" />
+          <Stack.Screen name="profile" />
+        </Stack>
+      </ThemeProvider>
+    </GluestackUIProvider>
   );
 }
